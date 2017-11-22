@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style media="screen">
+      *{margin:0;padding:0}
+      html,body{height: 100%;}
+      body{
+        padding:10px 0;
+        background:url(img/bg.png) no-repeat center;
+      /*  background: #001023;*/
+        background-size: cover;
+        color:#99CCFF !important;
+        line-height:1.5;
+      }
+      a{color:#99CCFF !important;}
+      .clearfix::after {
+          display: block;
+          clear: both;
+          content: "";
+      }
+      /*reset the end*/
+
+      .container-fluid{
+        width: 1430px!important;
+      }
+
+      #left,#main,#right{
+        float:left;
+        padding:20px;
+        height: 725px;
+      }
+      #left,#right{padding:0;}
+      #left{/*width: 30%; */width: 415px;}
+      #main{/*width: 50%;*/width: 700px;}
+      #right{/*width: 20%;*/ width: 285px;}
+
+      /*left the begin*/
+      .wrap{
+        width: 100%;
+        margin-bottom: 10px;
+        border:1px solid #99CCFF;
+        padding:5px;
+      }
+      .left-pic{
+        float:left;
+        width: 30%;
+        min-width: 110px;
+        text-align: center;
+        margin-top: 30px;
+
+      }
+      .title-h5{
+        margin-top: 0;
+      }
+
+      #leftBottom{
+        margin-bottom: 0;
+      }
+      #leftTop,#leftCenter,#leftBottom{
+        float:right;
+        width: 70%;
+        height: 208px;
+      }
+      .left-title{
+        margin: 0;
+        text-align: right;
+      }
+      .title_bg1{
+        background: url(img/left1.png) no-repeat left center;
+      }
+      .title_bg2{
+        background: url(img/left2.png) no-repeat left center;
+      }
+      .title_bg3{
+        background: url(img/left3.png) no-repeat left center;
+      }
+      .left-mark{
+        width: 110px;
+        height: 120px;
+        border-radius: 50%;
+        border-top-right-radius: 0;
+        border:1px solid #99CCFF;
+        margin-top: 20px;
+        position:relative;
+        text-align: center;
+        line-height: 120px;
+        background: rgba(22,51,82,0.8);
+      }
+      .left-mark span{
+        font-size: 50px;
+        font-weight: 700;
+      }
+      .left-mark b{
+        position: absolute;
+        bottom: -48px;
+        left:0;
+        right: 0;
+      }
+
+      /*right the begin*/
+      #rightMain{
+        width: 100%;
+        height: 100%;
+        border: 1px solid #99CCFF;
+        padding:10px 15px;
+      }
+      .right-title{
+          background: url(img/right1.png) no-repeat right center;
+          background-size: 50%;
+          margin-bottom: 10px;
+          margin-top:0;
+      }
+
+      .device-table{
+        width: 100%;
+        text-align: center;
+        color:#fff;
+      }
+      .device-table th{
+          width: 33.3%;
+          font-size: 12px;
+          background: #7F7F7F;
+          text-align: center;
+      }
+      .device-table tbody tr{
+        font-size: 12px;
+        background: rgba(89,89,89,0.5);
+      }
+      .device-table tbody tr:nth-last-of-type(even){
+        background:transparent;
+      }
+      .show-fixed{
+        width: 100%;
+        position: fixed;
+        bottom:0;
+        left:0;
+      }
+      .upDown{
+        width: 228px;
+        height: 35px;
+        position: absolute;
+        top:-35px;
+        left:0;
+        right: 0;
+        margin:auto;
+        cursor: pointer;
+      }
+      .upDown img{
+        vertical-align: middle;
+      }
+      .fixed-content{
+        width: 100%;
+        height: 600px;
+        display: none;
+        border-top:1px solid rgba(79,114,240,0.7);
+        background: rgba(0,0,0,0.7);
+      }
+    </style>
+  </head>
+  <body>
+
+  <div class="container-fluid clearfix">
+      <div id="left">
+        <div class="wrap">
+            <h5 class="left-title title_bg1">标题</h5>
+          <div class="box clearfix">
+            <div class="left-pic">
+              <h5 class="title-h5">标题</h5>
+              <div class="left-mark">
+                <span>530</span>
+                <b>万人</b>
+              </div>
+            </div>
+            <div id="leftTop"></div>
+          </div>
+        </div>
+        <div class="wrap">
+          <h5 class="left-title title_bg2">标题</h5>
+          <div class="box clearfix">
+            <div class="left-pic">
+              <h5 class="title-h5">标题</h5>
+              <div class="left-mark">
+                <span>530</span>
+                <b>万人</b>
+              </div>
+            </div>
+            <div id="leftCenter"></div>
+          </div>
+        </div>
+        <div class="wrap">
+          <h5 class="left-title title_bg3">标题</h5>
+          <div class="box clearfix">
+            <div class="left-pic">
+              <h5 class="title-h5">标题</h5>
+              <div class="left-mark">
+                <span>530</span>
+                <b>万人</b>
+              </div>
+            </div>
+            <div id="leftBottom"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="main"></div>
+
+      <div id="right">
+        <div id="rightMain">
+          <h5 class="right-title">已开通设备的城市</h5>
+          <table class="device-table">
+            <thead>
+              <tr>
+                <th>起点</th>
+                <th>目标点</th>
+                <th>是否在线</th>
+              </tr>
+            </thea>
+            <tbody>
+              <tr>
+                <td>深圳</td>
+                <td>长沙</td>
+                <td>√</td>
+              </tr>
+              <tr>
+                <td>深圳</td>
+                <td>福州</td>
+                <td>√</td>
+              </tr>
+              <tr>
+                <td>深圳</td>
+                <td>重庆</td>
+                <td>√</td>
+              </tr>
+              <tr>
+                <td>深圳</td>
+                <td>长沙</td>
+                <td>×</td>
+              </tr>
+              <tr>
+                <td>深圳</td>
+                <td>太原</td>
+                <td>√</td>
+              </tr>
+              <tr>
+                <td>深圳</td>
+                <td>包头</td>
+                <td>×</td>
+              </tr>
+              <tr>
+                <td>深圳</td>
+                <td>大连</td>
+                <td>√</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+
+    <div class="show-fixed">
+        <div class="upDown">
+            <img src="img/up-show.png" width="228" height="35" />
+        </div>
+        <div class="fixed-content"></div>
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/echarts-all.js"></script>
+
+    <!--js模板-->
+    <script src="js/main.js"></script>
+    <script src="js/leftTop.js"></script>
+    <script src="js/leftCenter.js"></script>
+    <script src="js/leftBottom.js"></script>
+
+    </script>
+    <script type="text/javascript">
+      //缩放
+    /*  setTimeout(function (){
+          window.onresize = function () {
+              myChartMain.resize();
+              myChartLeftTop.resize();
+              myChartLeftCenter.resize();
+              myChartLeftBottom.resize();
+          }
+      },1);*/
+
+
+
+
+      $(function(){
+        //滑动
+        $('.upDown img').click(function(){
+          if($('.fixed-content').is(':hidden')){
+            $(this).attr('src','img/up-hide.png');
+            $('.fixed-content').slideDown();
+          }else{
+            $(this).attr('src','img/up-show.png');
+            $('.fixed-content').slideUp();
+          }
+
+        });
+
+
+      //滚动表格
+      setInterval(function(){
+        $(".device-table").find("tbody").animate({
+          marginTop:"-18px"
+        },1000,function(){
+          $(this).css({marginTop:"0px"}).find("tr:first").appendTo(this);
+        })
+      },4000);
+
+      });
+
+
+
+    </script>
+
+
+  </body>
+</html>
